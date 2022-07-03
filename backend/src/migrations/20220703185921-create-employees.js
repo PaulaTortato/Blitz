@@ -14,6 +14,13 @@ module.exports = {
       lastName: {
         type: Sequelize.STRING
       },
+      email: {
+        unique: true,
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
     });
   },
   async down(queryInterface, Sequelize) {
