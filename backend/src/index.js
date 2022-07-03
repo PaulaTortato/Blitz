@@ -10,5 +10,3 @@ app.use(express.json());
 app.use(router);
 
 app.listen(port, () => console.log('ouvindo porta', port));
-
-module.exports = app;

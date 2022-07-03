@@ -1,10 +1,10 @@
-const { Employee } = require('../models');
+const { Employees } = require('../models');
 const generateToken = require('../utils/generateToken');
 
 const create = async (firstName, lastName, email, password) => {
-  const employeeExists = await Employee.findOne({ where: { email } });
+  const employeeExists = await Employees.findOne({ where: { email } });
   if (employeeExists) return { message: 'User already registered' };
-  const newEmployee = await Employee.create({ firstName, lastName, email, password });
+  const newEmployee = await Employees.create({ firstName, lastName, email, password });
   const { password: hidePass, ...safeEmployee } = newEmployee.dataValues;
   const token = generateToken(safeEmployee);
   return token;

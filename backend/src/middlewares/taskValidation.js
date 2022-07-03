@@ -4,10 +4,10 @@ const taskValidation = (req, res, next) => {
     return res.status(400)
     .json({ message: '"description" length must be at least 5 characters long' });
   }
-  if (status !== 'pendente' || status !== 'em andamento' || status !== 'pronto') {
-    return res.status(400)
-    .json({ message: '"status" must be a valid one' });
-  }
+  // if (status !== 'pendente' || status !== 'em andamento' || status !== 'pronto') {
+  //   return res.status(400)
+  //   .json({ message: '"status" must be a valid one' });
+  // }
   next();
 };
 
