@@ -1,9 +1,9 @@
-import { Router } from 'express';
+const express = require('express');
 const loginRouter = require('./login');
 const registerRouter = require('./register');
 const tasksRouter = require('./tasks');
 
-const router = Router();
+const router = express.Router();
 
 router.use('/login', loginRouter);
 router.use('/register', registerRouter);

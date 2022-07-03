@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const express = require('express');
 
-const registerRouter = Router();
+const registerRouter = express.Router();
 
 registerRouter.post('/', );
 

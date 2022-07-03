@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const express = require('express');
 
-const tasksRouter = Router();
+const tasksRouter = express.Router();
 
 tasksRouter.get('/', );
 tasksRouter.post('/', );

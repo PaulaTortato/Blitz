@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-import router from './routes';
+const router = require('./routes');
 
 const app = express();
 
