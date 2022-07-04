@@ -1,15 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { LoginContext } from '../contexts/loginContext';
+import { EmployeeContext } from '../contexts/employeeContext';
 
 function Register() {
-  const { handleEmployee } = useContext(LoginContext);
+  const { handleToken } = useContext(EmployeeContext);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [fail, setFail] = useState(undefined);
+  const [fail, setFail] = useState({});
   const navigate = useNavigate();
 
   const handleClick = async () => {
@@ -22,7 +22,7 @@ function Register() {
     if (data.message) {
       setFail(data);
     } else {
-      handleEmployee(data);
+      handleToken(data);
       navigate('/tasks');
     }
   };
@@ -75,7 +75,7 @@ function Register() {
       >
         Register
       </button>
-      {fail ? <p>{fail.message}</p> : null}
+      {fail.message ? <p>{fail.message}</p> : null}
     </form>
   );
 }

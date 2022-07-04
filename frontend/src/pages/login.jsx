@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { LoginContext } from '../contexts/loginContext';
+import { EmployeeContext } from '../contexts/employeeContext';
 
 function Login() {
-  const { handleEmployee } = useContext(LoginContext);
+  const { handleToken } = useContext(EmployeeContext);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [fail, setFail] = useState(undefined);
+  const [fail, setFail] = useState({});
   const navigate = useNavigate();
 
   const handleClick = async () => {
@@ -15,7 +15,7 @@ function Login() {
     if (data.message) {
       setFail(data);
     } else {
-      handleEmployee(data);
+      handleToken(data);
       navigate('/tasks');
     }
   };
@@ -42,7 +42,7 @@ function Login() {
           onChange={({ target }) => setPassword(target.value)}
         />
       </label>
-      {fail ? <p>{fail.message}</p> : null}
+      {fail.message ? <p>{fail.message}</p> : null}
       <button
         type="button"
         onClick={handleClick}

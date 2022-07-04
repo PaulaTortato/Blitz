@@ -20,9 +20,8 @@ const changeTask = async (req, res, _next) => {
 };
 
 const deleteTask = async (req, res, _next) => {
-  const employeeId = req.employee.id;
-  const { description } = req.body;
-  const response = await tasksService.remove(description, employeeId);
+  const { id } = req.params;
+  const response = await tasksService.remove(id);
   return res.status(201).json(response);
 };
 

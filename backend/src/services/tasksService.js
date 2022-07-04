@@ -1,7 +1,10 @@
 const { Tasks, Employees } = require('../models');
 
 const getAll = async (id) => {
-  const tasks = await Employees.findByPk(id, { include: [{ model: Tasks, as: 'tasks' }] });
+  const tasks = await Employees.findByPk(id, {
+    include: [{ model: Tasks, as: 'tasks' }],
+    attributes: { exclude: 'password' },
+  });
   return tasks;
 };
 
@@ -18,10 +21,11 @@ const update = async (description, status, id) => {
   return task;
 };
 
-const remove = async (description, employeeId) => {
-  const task = await Tasks.findOne({ where: { employeeId, description } });
-  if (!task) return { code: 404, message: { message: 'Task does not exist' } };
-  await Tasks.destroy({ where: { employeeId, description } });
+const remove = async (id) => {
+  console.log(id);
+  const task = await Tasks.findByPk(id);
+  if (!task) return { message: 'Task does not exist' };
+  await Tasks.destroy({ where: { id } });
   return { message: "Tarefa deletada com sucesso" };
 };
 
