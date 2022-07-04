@@ -1,6 +1,8 @@
-function Tasks(params) {
+import React from 'react';
+
+function Tasks() {
   return (
-    <section></section>
+    <section />
   );
 }
 

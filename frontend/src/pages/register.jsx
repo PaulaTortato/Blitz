@@ -1,6 +1,8 @@
-function Register(params) {
+import React from 'react';
+
+function Register() {
   return (
-    <form></form>
+    <form />
   );
 }
 
