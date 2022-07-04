@@ -9,9 +9,10 @@ function Login() {
   const [email, setEmail] = useState('');
   const [fail, setFail] = useState({});
   const navigate = useNavigate();
+  const config = { validateStatus: (status) => status < 500 };
 
   const handleClick = async () => {
-    const { data } = await axios.post('http://www.localhost:3001/login', { email, password });
+    const { data } = await axios.post('http://www.localhost:3001/login', { email, password }, config);
     if (data.message) {
       setFail(data);
     } else {

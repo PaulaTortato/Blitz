@@ -22,6 +22,7 @@ const changeTask = async (req, res, _next) => {
 const deleteTask = async (req, res, _next) => {
   const { id } = req.params;
   const response = await tasksService.remove(id);
+  if (response.code) return res.status(response.code).json(response.message);
   return res.status(201).json(response);
 };
 

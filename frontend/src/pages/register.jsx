@@ -11,6 +11,7 @@ function Register() {
   const [lastName, setLastName] = useState('');
   const [fail, setFail] = useState({});
   const navigate = useNavigate();
+  const config = { validateStatus: (status) => status < 500 };
 
   const handleClick = async () => {
     const { data } = await axios.post('http://www.localhost:3001/register', {
@@ -18,7 +19,7 @@ function Register() {
       lastName,
       email,
       password,
-    });
+    }, config);
     if (data.message) {
       setFail(data);
     } else {

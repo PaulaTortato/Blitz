@@ -12,7 +12,11 @@ function TaskContextProvider({ children }) {
   const [id, setId] = useState('');
   const [fail, setFail] = useState({});
   const [employee, setEmployee] = useState({});
-  const config = { headers: { Authorization: token } };
+  // Referêcia para validateSatus: https://stackoverflow.com/questions/57934670/getting-axios-response-if-node-server-sends-status-400
+  const config = {
+    headers: { Authorization: token },
+    validateStatus: (httpStatus) => httpStatus < 500,
+  };
 
   const handleTasks = async () => {
     const { data } = await axios.get('http://www.localhost:3001/tasks', config);
@@ -27,11 +31,11 @@ function TaskContextProvider({ children }) {
       { description, status, id },
       config,
     );
-    setDescription('');
-    setStatus('pendente');
     if (data.message) {
       setFail(data);
     } else {
+      setDescription('');
+      setStatus('pendente');
       handleTasks();
       setFail({});
     }
@@ -43,12 +47,12 @@ function TaskContextProvider({ children }) {
       { description, status, id },
       config,
     );
-    setDescription('');
-    setStatus('pendente');
-    setId('');
     if (data.message) {
       setFail(data);
     } else {
+      setDescription('');
+      setStatus('pendente');
+      setId('');
       handleTasks();
       setFail({});
     }

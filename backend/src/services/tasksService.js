@@ -15,16 +15,14 @@ const create = async (description, status, employeeId) => {
 };
 
 const update = async (description, status, id) => {
-  if (description) await Tasks.update({ description }, { where: { id } });
-  if (status) await Tasks.update({ status }, { where: { id } });
+  await Tasks.update({ description, status }, { where: { id } });
   const task = await Tasks.findByPk(id);
   return task;
 };
 
 const remove = async (id) => {
-  console.log(id);
   const task = await Tasks.findByPk(id);
-  if (!task) return { message: 'Task does not exist' };
+  if (!task) return { code: 404, message: { message: 'Task does not exist' } };
   await Tasks.destroy({ where: { id } });
   return { message: "Tarefa deletada com sucesso" };
 };
