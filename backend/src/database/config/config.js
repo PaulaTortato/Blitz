@@ -17,9 +17,6 @@ const options = {
   password: process.env.MYSQL_PASSWORD || '1234',
   dialect: 'mysql',
   // Referência para ajustar a timezone: https://stackoverflow.com/questions/52096692/change-sequelize-timezone
-  dialectOptions: {
-    useUTC: false,
-  },
   timezone: '-03:00',
   logging: process.env.DEBUG !== 'false',
 };
