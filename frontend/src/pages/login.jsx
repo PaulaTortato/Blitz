@@ -1,40 +1,43 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import { LoginContext } from '../contexts/loginContext';
 
-function Login({ history }) {
+function Login() {
   const { handleEmployee } = useContext(LoginContext);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [fail, setFail] = useState(undefined);
+  const navigate = useNavigate();
 
   const handleClick = async () => {
-    const credentials = await axios.post('http://www.localhost:3001/login', { email, password });
-    if (credentials.message) {
-      setFail(credentials);
+    const { data } = await axios.post('http://www.localhost:3001/login', { email, password });
+    if (data.message) {
+      setFail(data);
     } else {
-      handleEmployee(credentials);
-      history.push('/tasks');
+      handleEmployee(data);
+      navigate('/tasks');
     }
   };
 
   return (
     <form>
       <label htmlFor="email-input">
+        Email
         <input
           id="email-input"
           type="email"
-          placeholder="exemplo@exemplo"
+          placeholder="exemplo@exemplo.com"
           value={email}
           onChange={({ target }) => setEmail(target.value)}
         />
       </label>
       <label htmlFor="password-input">
+        Password
         <input
           id="password-input"
           type="password"
-          placeholder="Password"
+          placeholder="Enter your password"
           value={password}
           onChange={({ target }) => setPassword(target.value)}
         />
@@ -51,7 +54,3 @@ function Login({ history }) {
 }
 
 export default Login;
-
-Login.propTypes = {
-  history: PropTypes.arrayOf(PropTypes.string),
-}.isRequired;
