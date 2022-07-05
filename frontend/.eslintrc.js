@@ -18,6 +18,6 @@ module.exports = {
     'react',
   ],
   rules: {
-    "react/jsx-no-constructed-context-values": "off",
+    'react/jsx-no-constructed-context-values': 'off',
   },
 };
