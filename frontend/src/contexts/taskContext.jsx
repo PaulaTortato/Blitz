@@ -12,6 +12,7 @@ function TaskContextProvider({ children }) {
   const [id, setId] = useState('');
   const [fail, setFail] = useState({});
   const [employee, setEmployee] = useState({});
+  const [edit, setEdit] = useState(false);
   // Referêcia para validateSatus: https://stackoverflow.com/questions/57934670/getting-axios-response-if-node-server-sends-status-400
   const config = {
     headers: { Authorization: token },
@@ -55,6 +56,7 @@ function TaskContextProvider({ children }) {
       setId('');
       handleTasks();
       setFail({});
+      setEdit(false);
     }
   };
 
@@ -81,6 +83,8 @@ function TaskContextProvider({ children }) {
       handleTasks,
       employee,
       handleDelete,
+      edit,
+      setEdit,
     }}
     >
       {children}
