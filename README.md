@@ -10,7 +10,7 @@ Para começar, siga os seguintes passos:
 * Baixe o repositório;
 * Rode o ```npm install``` dentro das pastas frontend e backend.
 * Rode o ```docker-compose up --build -d``` ou ```docker compose up --build -d``` na pasta raiz.
-* Acesse a aplicação pelo localhost:3000.
+* Acesse a aplicação pelo localhost:3000 no seu browser.
 
 ## 🚀 O projeto
 
