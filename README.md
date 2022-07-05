@@ -1,5 +1,7 @@
 # Blitz de Carreira
 
+<!---Referência para o readme: https://github.com/iuricode/readme-template/blob/main/repository/repository.md--->
+
 > Repositório para o Blitz de Carreira da Trybe.
 
 ## 💻 Set Up
@@ -24,10 +26,11 @@ Na rota de login há inputs para validar o usuário, e caso a validação seja b
 
 Na tela de resgitro há inputs para a criação de um novo cadastro de funcionário, sendo as informações válidas o usuário é direcionado também para a rota de tarefas.
 
-Na rota de tarefas é possível criar uma nova tarefa e atribuir a ela um status, também é possível editar uma tarefa ou deleta-la.
+Na rota de tarefas é possível criar uma nova tarefa e atribuir a ela um status, também é possível editar uma tarefa ou deleta-la, assim como ordena-la por ordem alfabética, por data de criação ou por status.
 
 ## 📝 Incompleto
 
 Alguns itens que não foram finalizados por razões de tempo:
 * CSS;
 * Testes;
+* Ajuste da data;
