@@ -11,7 +11,7 @@ function TaskContextProvider({ children }) {
   const [status, setStatus] = useState('pendente');
   const [id, setId] = useState('');
   const [fail, setFail] = useState({});
-  const [employee, setEmployee] = useState({});
+  const [employee, setEmployee] = useState([]);
   const [edit, setEdit] = useState(false);
   // Referêcia para validateSatus: https://stackoverflow.com/questions/57934670/getting-axios-response-if-node-server-sends-status-400
   const config = {
@@ -22,7 +22,7 @@ function TaskContextProvider({ children }) {
   const handleTasks = async () => {
     const { data } = await axios.get('http://www.localhost:3001/tasks', config);
     if (data.message) return true;
-    setEmployee(data);
+    setEmployee(data.tasks);
     return false;
   };
 

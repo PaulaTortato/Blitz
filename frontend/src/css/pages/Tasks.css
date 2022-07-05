@@ -1,3 +1,16 @@
+#order-radio {
+  border: none;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.order {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
 .input-div {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -19,8 +32,8 @@ select {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: 30% 30% 20% 20%;
-  width: 500px;
+  grid-template-columns: 25% 25% 25% 10% 15%;
+  width: 700px;
   margin-top: 50px;
 }
 
