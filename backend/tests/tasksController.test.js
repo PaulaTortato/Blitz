@@ -3,6 +3,7 @@ const request = require('supertest');
 const app = require('../src/api');
 
 jest.mock('../src/middlewares/tokenValidation', () => jest.fn((req, _res, next) => { req.employee.id = 5; next(); }));
+jest.mock('../src/middlewares/taskValidation', () => jest.fn((_req, _res, next) => next()));
 
 const tasksService = require('../src/services/tasksService');
 
