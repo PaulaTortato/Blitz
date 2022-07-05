@@ -1,8 +1,9 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TaskContext } from '../contexts/taskContext';
 import EditTask from '../components/editTask';
 import NewTask from '../components/newTask';
+import '../css/pages/Tasks.css';
 
 function Tasks() {
   const navigate = useNavigate();
@@ -14,8 +15,9 @@ function Tasks() {
     employee,
     handleTasks,
     handleDelete,
+    edit,
+    setEdit,
   } = useContext(TaskContext);
-  const [edit, setEdit] = useState(false);
 
   const checkToken = async () => { if (await handleTasks()) navigate('/'); };
 
@@ -35,7 +37,7 @@ function Tasks() {
         {edit ? <EditTask /> : <NewTask />}
         {employee.tasks
           ? employee.tasks.map((task) => (
-            <div key={task.id}>
+            <div key={task.id} className="tasks">
               <span>{task.description}</span>
               <span>{task.status}</span>
               <button type="button" onClick={() => handleEdit(task)}>Edit</button>

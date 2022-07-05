@@ -11,7 +11,7 @@ function EditTask() {
   } = useContext(TaskContext);
 
   return (
-    <div>
+    <div className="input-div">
       <label htmlFor="description-input">
         Description
         <input
@@ -33,7 +33,7 @@ function EditTask() {
           <option>pronto</option>
         </select>
       </label>
-      <button type="button" onClick={handleEdit}>Edit task</button>
+      <button type="button" onClick={handleEdit} className="button">Edit task</button>
     </div>
   );
 }

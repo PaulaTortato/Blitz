@@ -1,0 +1,26 @@
+section {
+  display: grid;
+  padding-top: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+a {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px black solid;
+  border-radius: 5px;
+  background-color: gray;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background-color: black;
+  color: gray;
+}

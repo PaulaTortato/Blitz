@@ -1,0 +1,30 @@
+form {
+  display: grid;
+  justify-items: center;
+}
+
+label {
+  margin-bottom: 20px;
+  justify-self: end;
+  font-size: 18px;
+}
+
+input {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+button {
+  color: black;
+  border: black 2px solid;
+  border-radius: 5px;
+  background-color: gray;
+  padding: 7px 15px;
+  font-size: 18px;
+}
+
+button:hover {
+  color: gray;
+  background-color: black;
+  cursor: pointer;
+}

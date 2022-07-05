@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { EmployeeContext } from '../contexts/employeeContext';
+import '../css/pages/Login.css';
 
 function Login() {
   const { handleToken } = useContext(EmployeeContext);
