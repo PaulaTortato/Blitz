@@ -24,7 +24,7 @@ const remove = async (id) => {
   const task = await Tasks.findByPk(id);
   if (!task) return { code: 404, message: { message: 'Task does not exist' } };
   await Tasks.destroy({ where: { id } });
-  return { message: "Tarefa deletada com sucesso" };
+  return { message: 'Tarefa deletada com sucesso' };
 };
 
 module.exports = { getAll, create, update, remove };
