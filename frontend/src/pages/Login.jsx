@@ -23,6 +23,7 @@ function Login() {
 
   return (
     <form>
+      <h1>Login</h1>
       <label htmlFor="email-input">
         Email
         <input

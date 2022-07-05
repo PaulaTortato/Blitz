@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import EmployeeContextProvider from './contexts/employeeContext';
 import TaskContextProvider from './contexts/taskContext';
-import Home from './pages/home';
-import Login from './pages/login';
-import Register from './pages/register';
-import Tasks from './pages/tasks';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Tasks from './pages/Tasks';
 
 function App() {
   return (
