@@ -27,4 +27,9 @@ const remove = async (id) => {
   return { message: 'Tarefa deletada com sucesso' };
 };
 
-module.exports = { getAll, create, update, remove };
+module.exports = {
+  getAll,
+  create,
+  update,
+  remove,
+};
