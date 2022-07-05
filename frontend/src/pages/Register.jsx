@@ -30,6 +30,7 @@ function Register() {
 
   return (
     <form>
+      <h1>Register</h1>
       <label htmlFor="firstname-input">
         First Name
         <input
