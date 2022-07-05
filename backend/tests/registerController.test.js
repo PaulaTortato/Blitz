@@ -4,6 +4,9 @@ const app = require('../src/api');
 
 const registerService = require('../src/services/registerService');
 
+// Referência para mock de middleware: https://stackoverflow.com/questions/56014527/how-to-mock-a-middleware-in-supertest
+jest.mock('../src/middlewares/registerValidation', () => jest.fn((_req, _res, next) => next()));
+
 describe('Register controller', () => {
 
   describe('O token deve ser retornado corretamente', () => {
@@ -17,7 +20,7 @@ describe('Register controller', () => {
 
     it('Verifica se o status retornado é correto', async () => {
       const result = await request(app).post('/register');
-      expect(result.statusCode).toBe(200);
+      expect(result.statusCode).toBe(201);
     });
 
     it('Verifica se o token é retornado', async () => {
