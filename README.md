@@ -14,7 +14,7 @@ Para começar, siga os seguintes passos:
 
 ## 🚀 O projeto
 
-Esse projeto teve como finalidade atender uma demanda de lista de tarefas editavél de acordo com o funcionário logado.
+Esse projeto teve como finalidade atender uma demanda de lista de tarefas editável de acordo com o funcionário logado.
 
 Foram utilizados o Node.js, o Express, o JWT, o MySQL e o Sequelize para a criação da API, React para aplicação front-end e Jest, RTL, Supertest e Sinon para a testagem.
 
